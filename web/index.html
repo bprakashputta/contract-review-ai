@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contract Review</title>
+<meta name="description" content="Upload a contract, get its key clauses with verified quotes, playbook risk flags and cited answers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap">
+<link rel="stylesheet" href="/static/app.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect x='3' y='1.5' width='10' height='13' fill='none' stroke='%23c8431a' stroke-width='1.4'/%3E%3Cpath d='M5.5 5h5M5.5 8h5M5.5 11h3' stroke='%2317160f' stroke-width='1.2'/%3E%3C/svg%3E">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap bar">
+    <a class="brand" href="/">contract<em>review</em></a>
+    <div class="meta label" id="meta">loading…</div>
+    <button class="theme" id="theme" type="button" aria-label="Toggle dark mode">Theme</button>
+  </div>
+</header>
+
+<main class="wrap layout">
+  <aside class="rail">
+    <section>
+      <div class="label">Upload</div>
+      <label class="drop" id="drop">
+        <input type="file" id="file" accept=".pdf,.docx,.txt" hidden>
+        <span class="drop-main">Drop a contract</span>
+        <span class="label">PDF · DOCX · TXT</span>
+      </label>
+      <p class="status small" id="upload-status" role="status"></p>
+    </section>
+    <section>
+      <div class="label">Documents</div>
+      <ol class="docs" id="docs"></ol>
+    </section>
+  </aside>
+
+  <section class="main" id="main">
+    <div class="empty" id="empty">
+      <h1 class="display">Every clause,<br><em>with its quote.</em></h1>
+      <p class="muted lede">Upload a commercial contract. The service finds 12 clause types that matter in a first review, quotes the exact text for each one, checks every quote against the document, flags risks against a YAML playbook and answers questions with citations.</p>
+      <ul class="facts">
+        <li><span class="label">Model</span><span class="mono">Claude Haiku 5.5</span></li>
+        <li><span class="label">Quotes</span><span>verified in code, never paraphrased</span></li>
+        <li><span class="label">Risk</span><span>deterministic rules, not model opinion</span></li>
+      </ul>
+    </div>
+
+    <div class="doc-view" id="doc-view" hidden>
+      <div class="doc-head">
+        <div>
+          <div class="label" id="doc-kicker">Document</div>
+          <h2 id="doc-title"></h2>
+          <div class="stats mono" id="doc-stats"></div>
+        </div>
+        <button class="pill primary" id="run" type="button">Run review</button>
+      </div>
+
+      <div class="cols">
+        <div class="left">
+          <section class="block" id="clauses-block" hidden>
+            <div class="block-head"><h3>Clauses</h3><span class="label" id="clause-count"></span></div>
+            <table class="clauses">
+              <thead><tr><th class="label">Category</th><th class="label">Found</th><th class="label">Quote</th></tr></thead>
+              <tbody id="clauses"></tbody>
+            </table>
+            <p class="footnote small muted" id="verify-note"></p>
+          </section>
+
+          <section class="block" id="risks-block" hidden>
+            <div class="block-head"><h3>Risk flags</h3><span class="label" id="risk-count"></span></div>
+            <ol class="risks" id="risks"></ol>
+          </section>
+
+          <section class="block">
+            <div class="block-head"><h3>Ask the contract</h3><span class="label">cited answers</span></div>
+            <form class="ask" id="ask">
+              <input id="question" type="text" placeholder="Can either party terminate without cause?" autocomplete="off" maxlength="500">
+              <button class="pill" type="submit">Ask</button>
+            </form>
+            <ol class="answers" id="answers"></ol>
+          </section>
+        </div>
+
+        <div class="right">
+          <div class="paper-head">
+            <span class="label">Contract text</span>
+            <span class="label" id="hl-legend"><i class="sw"></i> verified quote</span>
+          </div>
+          <div class="paper" id="paper" tabindex="0"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="wrap foot label">Not legal advice. Evaluated on CUAD v1 (The Atticus Project, CC BY 4.0).</footer>
+<script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+# One command: `docker compose up --build` then open http://localhost:8000
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file: .env
+    environment:
+      DATA_DIR: /app/data
+      DB_PATH: /app/data/contracts.db
+    volumes:
+      - ./data:/app/data # SQLite db, LLM response cache and the spend ledger persist here
+    restart: unless-stopped

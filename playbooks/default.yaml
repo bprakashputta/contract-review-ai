@@ -1,0 +1,76 @@
+# Default review playbook. Rules are evaluated in code (contract_review_ai/playbook.py)
+# against *verified* clauses only, so every flag points at quoted contract text (or at the
+# absence of a clause). Edit this file, or POST another playbook to /api/review, to change
+# the policy. Severity: high | medium | low | info.
+name: Default commercial playbook
+version: 1
+rules:
+  - id: liability-cap-required
+    type: required
+    category: cap_on_liability
+    severity: high
+    message: No limitation-of-liability clause found. Exposure on breach may be unlimited.
+
+  - id: uncapped-liability-carveout
+    type: forbidden
+    category: uncapped_liability
+    severity: high
+    message: Liability is uncapped for some claims. Check which carve-outs apply to us.
+
+  - id: auto-renewal-notice
+    type: min_notice_days
+    category: renewal_term
+    notice_category: notice_to_terminate_renewal
+    min_days: 30
+    severity: medium
+    message: Auto-renewal needs a non-renewal notice window of at least 30 days.
+    missing_message: The contract auto-renews but no non-renewal notice period was found.
+
+  - id: governing-law-allowed
+    type: allowed_values
+    category: governing_law
+    allowed: [Delaware, New York, California, Texas]
+    severity: low
+    message: Governing law is outside our preferred jurisdictions.
+
+  - id: termination-for-convenience
+    type: forbidden
+    category: termination_for_convenience
+    severity: medium
+    message: A party can terminate without cause. Check whether the counterparty can exit at will.
+
+  - id: non-compete
+    type: forbidden
+    category: non_compete
+    severity: medium
+    message: Contains a non-compete restriction.
+
+  - id: exclusivity
+    type: forbidden
+    category: exclusivity
+    severity: medium
+    message: Contains an exclusivity commitment.
+
+  - id: ip-assignment
+    type: forbidden
+    category: ip_ownership_assignment
+    severity: medium
+    message: Intellectual property is assigned to the other party.
+
+  - id: change-of-control
+    type: forbidden
+    category: change_of_control
+    severity: low
+    message: Change-of-control provision. A merger or acquisition may trigger termination or consent rights.
+
+  - id: anti-assignment
+    type: forbidden
+    category: anti_assignment
+    severity: info
+    message: Assignment requires consent or notice.
+
+  - id: audit-rights
+    type: forbidden
+    category: audit_rights
+    severity: info
+    message: The counterparty has audit or inspection rights.

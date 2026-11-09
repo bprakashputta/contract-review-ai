@@ -1,0 +1,55 @@
+[project]
+name = "contract-review-ai"
+version = "0.1.0"
+description = "Evidence-backed contract review: clause extraction with code-verified quotes, YAML playbook risk flags and cited Q&A. Evaluated on CUAD v1."
+readme = "README.md"
+authors = [
+    { name = "Bhanu Prakash Putta", email = "bhanu.putta1999@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "anthropic>=2.6.0",
+    "fastapi>=0.162.2",
+    "httpx>=0.28.1",
+    "langgraph>=1.2.20",
+    "pydantic>=2.14.3",
+    "pydantic-settings>=2.16.2",
+    "pypdf>=7.0.0",
+    "python-docx>=1.2.0",
+    "python-multipart>=0.0.33",
+    "pyyaml>=6.0.3",
+    "rapidfuzz>=3.14.6",
+    "uvicorn[standard]>=0.54.0",
+]
+
+[project.scripts]
+contract-review-ai = "contract_review_ai.api:main"
+
+[build-system]
+requires = ["uv_build>=0.12.5,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+    "ruff>=0.17.4",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["E501"]
+# category definitions and markdown-table rows read better as single literals
+"src/contract_review_ai/categories.py" = ["E501"]
+"src/contract_review_ai/evaluation/*" = ["E501"]
+
+[tool.ruff.lint.flake8-bugbear]
+extend-immutable-calls = ["fastapi.File"]

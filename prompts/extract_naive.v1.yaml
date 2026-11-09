@@ -1,0 +1,10 @@
+version: extract_naive.v1
+description: >
+  Baseline for the eval: the whole contract and a minimal instruction with category names
+  only. No definitions, no quoting rules.
+system: |
+  Extract the following clauses from the contract and quote them: {category_names}.
+user: |
+  <contract filename="{filename}">
+  {contract}
+  </contract>

@@ -1,0 +1,9758 @@
+{
+ "config": "pipeline_v1",
+ "model": "claude-haiku-5-5",
+ "split": "dev",
+ "n": 60,
+ "prompt": "extract.v1",
+ "mode": "auto",
+ "prefilter": {
+  "k": 3,
+  "min_tokens": 3000
+ },
+ "summary": {
+  "raw": {
+   "overall": {
+    "precision": 0.8059701492537313,
+    "recall": 0.9342560553633218,
+    "f1": 0.8653846153846154,
+    "tp": 270,
+    "fp": 65,
+    "fn": 19,
+    "tn": 366,
+    "support": 289,
+    "span_hit_rate": 0.9555555555555556,
+    "mean_jaccard": 0.6717136991404099,
+    "quote_precision": 0.8760563380281691,
+    "macro_f1": 0.8283602920126198
+   },
+   "per_category": {
+    "governing_law": {
+     "precision": 0.9803921568627451,
+     "recall": 1.0,
+     "f1": 0.99009900990099,
+     "tp": 50,
+     "fp": 1,
+     "fn": 0,
+     "tn": 9,
+     "support": 50,
+     "span_hit_rate": 1.0,
+     "mean_jaccard": 0.9666241530612103,
+     "quote_precision": 1.0
+    },
+    "renewal_term": {
+     "precision": 0.8636363636363636,
+     "recall": 0.9047619047619048,
+     "f1": 0.8837209302325582,
+     "tp": 19,
+     "fp": 3,
+     "fn": 2,
+     "tn": 36,
+     "support": 21,
+     "span_hit_rate": 1.0,
+     "mean_jaccard": 0.8698645041449864,
+     "quote_precision": 1.0
+    },
+    "notice_to_terminate_renewal": {
+     "precision": 0.6875,
+     "recall": 1.0,
+     "f1": 0.8148148148148148,
+     "tp": 11,
+     "fp": 5,
+     "fn": 0,
+     "tn": 44,
+     "support": 11,
+     "span_hit_rate": 1.0,
+     "mean_jaccard": 0.6911638680650128,
+     "quote_precision": 0.9166666666666666
+    },
+    "termination_for_convenience": {
+     "precision": 0.8,
+     "recall": 0.8695652173913043,
+     "f1": 0.8333333333333333,
+     "tp": 20,
+     "fp": 5,
+     "fn": 3,
+     "tn": 32,
+     "support": 23,
+     "span_hit_rate": 1.0,
+     "mean_jaccard": 0.7513882514903119,
+     "quote_precision": 1.0
+    },
+    "cap_on_liability": {
+     "precision": 0.9032258064516129,
+     "recall": 0.9333333333333333,
+     "f1": 0.9180327868852459,
+     "tp": 28,
+     "fp": 3,
+     "fn": 2,
+     "tn": 27,
+     "support": 30,
+     "span_hit_rate": 0.9642857142857143,
+     "mean_jaccard": 0.6658735215785077,
+     "quote_precision": 0.8780487804878049
+    },
+    "uncapped_liability": {
+     "precision": 0.5,
+     "recall": 1.0,
+     "f1": 0.6666666666666666,
+     "tp": 14,
+     "fp": 14,
+     "fn": 0,
+     "tn": 32,
+     "support": 14,
+     "span_hit_rate": 1.0,
+     "mean_jaccard": 0.6620383673313708,
+     "quote_precision": 1.0
+    },
+    "non_compete": {
+     "precision": 0.8333333333333334,
+     "recall": 0.5555555555555556,
+     "f1": 0.6666666666666667,
+     "tp": 10,
+     "fp": 2,
+     "fn": 8,
+     "tn": 40,
+     "support": 18,
+     "span_hit_rate": 0.9,
+     "mean_jaccard": 0.415404056105401,
+     "quote_precision": 0.8125
+    },
+    "exclusivity": {
+     "precision": 0.7333333333333333,
+     "recall": 0.9565217391304348,
+     "f1": 0.8301886792452831,
+     "tp": 22,
+     "fp": 8,
+     "fn": 1,
+     "tn": 29,
+     "support": 23,
+     "span_hit_rate": 0.7727272727272727,
+     "mean_jaccard": 0.39229379929012365,
+     "quote_precision": 0.6111111111111112
+    },
+    "ip_ownership_assignment": {
+     "precision": 0.5416666666666666,
+     "recall": 0.9285714285714286,
+     "f1": 0.6842105263157894,
+     "tp": 13,
+     "fp": 11,
+     "fn": 1,
+     "tn": 35,
+     "support": 14,
+     "span_hit_rate": 0.9230769230769231,
+     "mean_jaccard": 0.3786556613074535,
+     "quote_precision": 0.7916666666666666
+    },
+    "change_of_control": {
+     "precision": 0.6363636363636364,
+     "recall": 0.9333333333333333,
+     "f1": 0.7567567567567568,
+     "tp": 14,
+     "fp": 8,
+     "fn": 1,
+     "tn": 37,
+     "support": 15,
+     "span_hit_rate": 0.7857142857142857,
+     "mean_jaccard": 0.4457628264975866,
+     "quote_precision": 0.7777777777777778
+    },
+    "anti_assignment": {
+     "precision": 0.9591836734693877,
+     "recall": 1.0,
+     "f1": 0.9791666666666666,
+     "tp": 47,
+     "fp": 2,
+     "fn": 0,
+     "tn": 11,
+     "support": 47,
+     "span_hit_rate": 0.9787234042553191,
+     "mean_jaccard": 0.6813647696020362,
+     "quote_precision": 0.9180327868852459
+    },
+    "audit_rights": {
+     "precision": 0.88,
+     "recall": 0.9565217391304348,
+     "f1": 0.9166666666666666,
+     "tp": 22,
+     "fp": 3,
+     "fn": 1,
+     "tn": 34,
+     "support": 23,
+     "span_hit_rate": 1.0,
+     "mean_jaccard": 0.45402957845641273,
+     "quote_precision": 0.8205128205128205
+    }
+   }
+  },
+  "verified": {
+   "overall": {
+    "precision": 0.8059701492537313,
+    "recall": 0.9342560553633218,
+    "f1": 0.8653846153846154,
+    "tp": 270,
+    "fp": 65,
+    "fn": 19,
+    "tn": 366,
+    "support": 289,
+    "span_hit_rate": 0.9555555555555556,
+    "mean_jaccard": 0.6717136991404099,
+    "quote_precision": 0.8760563380281691,
+    "macro_f1": 0.8283602920126198
+   },
+   "per_category": {
+    "governing_law": {
+     "precision": 0.9803921568627451,
+     "recall": 1.0,
+     "f1": 0.99009900990099,
+     "tp": 50,
+     "fp": 1,
+     "fn": 0,
+     "tn": 9,
+     "support": 50,
+     "span_hit_rate": 1.0,
+     "mean_jaccard": 0.9666241530612103,
+     "quote_precision": 1.0
+    },
+    "renewal_term": {
+     "precision": 0.8636363636363636,
+     "recall": 0.9047619047619048,
+     "f1": 0.8837209302325582,
+     "tp": 19,
+     "fp": 3,
+     "fn": 2,
+     "tn": 36,
+     "support": 21,
+     "span_hit_rate": 1.0,
+     "mean_jaccard": 0.8698645041449864,
+     "quote_precision": 1.0
+    },
+    "notice_to_terminate_renewal": {
+     "precision": 0.6875,
+     "recall": 1.0,
+     "f1": 0.8148148148148148,
+     "tp": 11,
+     "fp": 5,
+     "fn": 0,
+     "tn": 44,
+     "support": 11,
+     "span_hit_rate": 1.0,
+     "mean_jaccard": 0.6911638680650128,
+     "quote_precision": 0.9166666666666666
+    },
+    "termination_for_convenience": {
+     "precision": 0.8,
+     "recall": 0.8695652173913043,
+     "f1": 0.8333333333333333,
+     "tp": 20,
+     "fp": 5,
+     "fn": 3,
+     "tn": 32,
+     "support": 23,
+     "span_hit_rate": 1.0,
+     "mean_jaccard": 0.7513882514903119,
+     "quote_precision": 1.0
+    },
+    "cap_on_liability": {
+     "precision": 0.9032258064516129,
+     "recall": 0.9333333333333333,
+     "f1": 0.9180327868852459,
+     "tp": 28,
+     "fp": 3,
+     "fn": 2,
+     "tn": 27,
+     "support": 30,
+     "span_hit_rate": 0.9642857142857143,
+     "mean_jaccard": 0.6658735215785077,
+     "quote_precision": 0.8780487804878049
+    },
+    "uncapped_liability": {
+     "precision": 0.5,
+     "recall": 1.0,
+     "f1": 0.6666666666666666,
+     "tp": 14,
+     "fp": 14,
+     "fn": 0,
+     "tn": 32,
+     "support": 14,
+     "span_hit_rate": 1.0,
+     "mean_jaccard": 0.6620383673313708,
+     "quote_precision": 1.0
+    },
+    "non_compete": {
+     "precision": 0.8333333333333334,
+     "recall": 0.5555555555555556,
+     "f1": 0.6666666666666667,
+     "tp": 10,
+     "fp": 2,
+     "fn": 8,
+     "tn": 40,
+     "support": 18,
+     "span_hit_rate": 0.9,
+     "mean_jaccard": 0.415404056105401,
+     "quote_precision": 0.8125
+    },
+    "exclusivity": {
+     "precision": 0.7333333333333333,
+     "recall": 0.9565217391304348,
+     "f1": 0.8301886792452831,
+     "tp": 22,
+     "fp": 8,
+     "fn": 1,
+     "tn": 29,
+     "support": 23,
+     "span_hit_rate": 0.7727272727272727,
+     "mean_jaccard": 0.39229379929012365,
+     "quote_precision": 0.6111111111111112
+    },
+    "ip_ownership_assignment": {
+     "precision": 0.5416666666666666,
+     "recall": 0.9285714285714286,
+     "f1": 0.6842105263157894,
+     "tp": 13,
+     "fp": 11,
+     "fn": 1,
+     "tn": 35,
+     "support": 14,
+     "span_hit_rate": 0.9230769230769231,
+     "mean_jaccard": 0.3786556613074535,
+     "quote_precision": 0.7916666666666666
+    },
+    "change_of_control": {
+     "precision": 0.6363636363636364,
+     "recall": 0.9333333333333333,
+     "f1": 0.7567567567567568,
+     "tp": 14,
+     "fp": 8,
+     "fn": 1,
+     "tn": 37,
+     "support": 15,
+     "span_hit_rate": 0.7857142857142857,
+     "mean_jaccard": 0.4457628264975866,
+     "quote_precision": 0.7777777777777778
+    },
+    "anti_assignment": {
+     "precision": 0.9591836734693877,
+     "recall": 1.0,
+     "f1": 0.9791666666666666,
+     "tp": 47,
+     "fp": 2,
+     "fn": 0,
+     "tn": 11,
+     "support": 47,
+     "span_hit_rate": 0.9787234042553191,
+     "mean_jaccard": 0.6813647696020362,
+     "quote_precision": 0.9180327868852459
+    },
+    "audit_rights": {
+     "precision": 0.88,
+     "recall": 0.9565217391304348,
+     "f1": 0.9166666666666666,
+     "tp": 22,
+     "fp": 3,
+     "fn": 1,
+     "tn": 34,
+     "support": 23,
+     "span_hit_rate": 1.0,
+     "mean_jaccard": 0.45402957845641273,
+     "quote_precision": 0.8205128205128205
+    }
+   }
+  },
+  "quotes": {
+   "returned": 437,
+   "exact": 431,
+   "repaired": 6,
+   "unverified": 0,
+   "unverified_rate": 0.0
+  },
+  "verification_flips": {
+   "false_positive_removed": 0,
+   "true_positive_lost": 0
+  },
+  "cost": {
+   "total_usd": 0.0986663,
+   "per_contract_mean_usd": 0.0016444383333333334,
+   "per_contract_max_usd": 0.0038769,
+   "input_tokens_mean": 10617.383333333333,
+   "output_tokens_mean": 1165.4
+  },
+  "latency": {
+   "mean_s": 4.388991666666667,
+   "p50_s": 4.19875,
+   "p95_s": 8.0297
+  },
+  "prefiltered_contracts": 51
+ },
+ "contracts": [
+  {
+   "id": "ASPIRITYHOLDINGSLLC_05_07_2012-EX-10.6-OUTSOURCING AGREEMENT",
+   "mode": "prefilter",
+   "chars": 67111,
+   "sections_sent": 37,
+   "sections_total": 54,
+   "input_tokens": 18073,
+   "output_tokens": 1069,
+   "cost_usd": 0.0023418000000000002,
+   "latency_s": 4.336,
+   "wall_s": 0.0864513750129845,
+   "quotes": 11,
+   "quotes_exact": 11,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "liability-cap-required",
+    "termination-for-convenience",
+    "exclusivity",
+    "ip-assignment",
+    "governing-law-allowed",
+    "anti-assignment",
+    "audit-rights"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       57585,
+       57736
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       52960,
+       53262
+      ],
+      [
+       53263,
+       53384
+      ],
+      [
+       53385,
+       53506
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       17723,
+       17968
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       27355,
+       27529
+      ],
+      [
+       21479,
+       21665
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       44739,
+       44948
+      ],
+      [
+       55832,
+       55953
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       29304,
+       29530
+      ],
+      [
+       45708,
+       45782
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "AULAMERICANUNITTRUST_04_24_2020-EX-99.8.77-SERVICING AGREEMENT",
+   "mode": "prefilter",
+   "chars": 36019,
+   "sections_sent": 18,
+   "sections_total": 26,
+   "input_tokens": 10075,
+   "output_tokens": 857,
+   "cost_usd": 0.001436,
+   "latency_s": 3.8915,
+   "wall_s": 3.9854669170163106,
+   "quotes": 6,
+   "quotes_exact": 6,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "termination-for-convenience",
+    "anti-assignment",
+    "audit-rights"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       11424,
+       11584
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       10712,
+       10925
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       34851,
+       34938
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       11424,
+       11584
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       8196,
+       8534
+      ],
+      [
+       29067,
+       29455
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "AURASYSTEMSINC_06_16_2010-EX-10.25-STRATEGIC ALLIANCE AGREEMENT",
+   "mode": "prefilter",
+   "chars": 45033,
+   "sections_sent": 30,
+   "sections_total": 47,
+   "input_tokens": 12586,
+   "output_tokens": 1808,
+   "cost_usd": 0.0021626,
+   "latency_s": 6.3546000000000005,
+   "wall_s": 0.12071129199466668,
+   "quotes": 12,
+   "quotes_exact": 12,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "uncapped-liability-carveout",
+    "termination-for-convenience",
+    "exclusivity",
+    "change-of-control",
+    "anti-assignment",
+    "audit-rights"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       34812,
+       35026
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       26572,
+       26948
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       26764,
+       26948
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       28166,
+       28264
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       38206,
+       38334
+      ],
+      [
+       31804,
+       32157
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       38829,
+       39228
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       5746,
+       5893
+      ],
+      [
+       5950,
+       6178
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       27269,
+       27756
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       34404,
+       34646
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       29307,
+       29636
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "AimmuneTherapeuticsInc_20200205_8-K_EX-10.3_11967170_EX-10.3_Development Agreement",
+   "mode": "prefilter",
+   "chars": 167973,
+   "sections_sent": 67,
+   "sections_total": 276,
+   "input_tokens": 19844,
+   "output_tokens": 1873,
+   "cost_usd": 0.0029208999999999997,
+   "latency_s": 7.3088999999999995,
+   "wall_s": 7.48385399999097,
+   "quotes": 12,
+   "quotes_exact": 12,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "uncapped-liability-carveout",
+    "termination-for-convenience",
+    "non-compete",
+    "exclusivity",
+    "ip-assignment",
+    "change-of-control",
+    "anti-assignment",
+    "audit-rights"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       149488,
+       149744
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       126940,
+       127078
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       111578,
+       111830
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       111831,
+       112106
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       44952,
+       45254
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       38935,
+       39125
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       80115,
+       80438
+      ],
+      [
+       79366,
+       79538
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       142819,
+       143256
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       142819,
+       142963
+      ],
+      [
+       144160,
+       144334
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       76350,
+       76638
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "Apollo Endosurgery - Manufacturing and Supply Agreement",
+   "mode": "prefilter",
+   "chars": 48253,
+   "sections_sent": 37,
+   "sections_total": 89,
+   "input_tokens": 10185,
+   "output_tokens": 1643,
+   "cost_usd": 0.00184,
+   "latency_s": 5.862100000000001,
+   "wall_s": 0.15532379198702984,
+   "quotes": 8,
+   "quotes_exact": 6,
+   "quotes_repaired": 2,
+   "quotes_unverified": 0,
+   "risks": [
+    "uncapped-liability-carveout",
+    "change-of-control",
+    "anti-assignment",
+    "audit-rights"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       37375,
+       37593
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       4767,
+       5069
+      ]
+     ],
+     "statuses": [
+      "repaired"
+     ],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       4942,
+       5069
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       29860,
+       30289
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       29705,
+       29986
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       38134,
+       38560
+      ]
+     ],
+     "statuses": [
+      "repaired"
+     ],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       37974,
+       38133
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       24174,
+       24518
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "ArcGroupInc_20171211_8-K_EX-10.1_10976103_EX-10.1_Sponsorship Agreement",
+   "mode": "prefilter",
+   "chars": 16773,
+   "sections_sent": 10,
+   "sections_total": 12,
+   "input_tokens": 6900,
+   "output_tokens": 513,
+   "cost_usd": 0.0009465,
+   "latency_s": 2.61,
+   "wall_s": 2.7434522080002353,
+   "quotes": 2,
+   "quotes_exact": 2,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "liability-cap-required",
+    "exclusivity"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       14652,
+       14850
+      ],
+      [
+       15352,
+       15475
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "ArcaUsTreasuryFund_20200207_N-2_EX-99.K5_11971930_EX-99.K5_Development Agreement",
+   "mode": "prefilter",
+   "chars": 15318,
+   "sections_sent": 11,
+   "sections_total": 13,
+   "input_tokens": 6638,
+   "output_tokens": 1467,
+   "cost_usd": 0.0013973000000000002,
+   "latency_s": 5.5324,
+   "wall_s": 5.597942874999717,
+   "quotes": 7,
+   "quotes_exact": 7,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "uncapped-liability-carveout",
+    "auto-renewal-notice",
+    "termination-for-convenience",
+    "anti-assignment",
+    "audit-rights"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       14408,
+       14708
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       13148,
+       13753
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       12246,
+       12506
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       9450,
+       9895
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       10828,
+       11385
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       13758,
+       13922
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       5278,
+       5569
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "ArmstrongFlooringInc_20190107_8-K_EX-10.2_11471795_EX-10.2_Intellectual Property Agreement",
+   "mode": "prefilter",
+   "chars": 56858,
+   "sections_sent": 30,
+   "sections_total": 69,
+   "input_tokens": 15260,
+   "output_tokens": 613,
+   "cost_usd": 0.0018325,
+   "latency_s": 3.2517,
+   "wall_s": 3.33564508301788,
+   "quotes": 3,
+   "quotes_exact": 3,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "liability-cap-required",
+    "ip-assignment",
+    "anti-assignment"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       33798,
+       33915
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       10548,
+       10678
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       29379,
+       29626
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "AtnInternationalInc_20191108_10-Q_EX-10.1_11878541_EX-10.1_Maintenance Agreement",
+   "mode": "prefilter",
+   "chars": 228943,
+   "sections_sent": 67,
+   "sections_total": 383,
+   "input_tokens": 17636,
+   "output_tokens": 1903,
+   "cost_usd": 0.0027151000000000002,
+   "latency_s": 6.9655,
+   "wall_s": 0.0968630829884205,
+   "quotes": 13,
+   "quotes_exact": 12,
+   "quotes_repaired": 1,
+   "quotes_unverified": 0,
+   "risks": [
+    "uncapped-liability-carveout",
+    "termination-for-convenience",
+    "exclusivity",
+    "ip-assignment",
+    "change-of-control",
+    "anti-assignment",
+    "audit-rights"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       58647,
+       58952
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       137764,
+       137932
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       103407,
+       104152
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       103639,
+       104152
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       106326,
+       106597
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       113239,
+       113444
+      ],
+      [
+       113445,
+       113585
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       39794,
+       40417
+      ],
+      [
+       39588,
+       39793
+      ]
+     ],
+     "statuses": [
+      "repaired",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       37804,
+       38157
+      ],
+      [
+       40865,
+       41010
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       120386,
+       120604
+      ],
+      [
+       123520,
+       123918
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "AzulSa_20170303_F-1A_EX-10.3_9943903_EX-10.3_Maintenance Agreement1",
+   "mode": "prefilter",
+   "chars": 233248,
+   "sections_sent": 64,
+   "sections_total": 386,
+   "input_tokens": 17024,
+   "output_tokens": 2204,
+   "cost_usd": 0.0028044000000000003,
+   "latency_s": 8.0602,
+   "wall_s": 0.0977734999905806,
+   "quotes": 17,
+   "quotes_exact": 16,
+   "quotes_repaired": 1,
+   "quotes_unverified": 0,
+   "risks": [
+    "uncapped-liability-carveout",
+    "termination-for-convenience",
+    "exclusivity",
+    "change-of-control",
+    "anti-assignment",
+    "audit-rights"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       97663,
+       97928
+      ],
+      [
+       98253,
+       98426
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       32174,
+       32392
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       32174,
+       32392
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       72219,
+       72769
+      ]
+     ],
+     "statuses": [
+      "repaired"
+     ],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       64787,
+       64931
+      ],
+      [
+       170417,
+       170656
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       65647,
+       65823
+      ],
+      [
+       65438,
+       65595
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       158567,
+       158810
+      ],
+      [
+       167074,
+       167420
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       88898,
+       89105
+      ],
+      [
+       89255,
+       89426
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       88010,
+       88434
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       35529,
+       35790
+      ],
+      [
+       36087,
+       36375
+      ],
+      [
+       154179,
+       154374
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "BEYONDCOMCORP_08_03_2000-EX-10.2-CO-HOSTING AGREEMENT",
+   "mode": "prefilter",
+   "chars": 58300,
+   "sections_sent": 34,
+   "sections_total": 89,
+   "input_tokens": 10126,
+   "output_tokens": 1386,
+   "cost_usd": 0.0017056,
+   "latency_s": 4.9948999999999995,
+   "wall_s": 0.028627207997487858,
+   "quotes": 11,
+   "quotes_exact": 11,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "uncapped-liability-carveout",
+    "exclusivity",
+    "change-of-control",
+    "anti-assignment",
+    "audit-rights"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       28343,
+       28514
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       25569,
+       25719
+      ],
+      [
+       25857,
+       26065
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       25569,
+       25719
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       5892,
+       6005
+      ],
+      [
+       7876,
+       8112
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       28052,
+       28334
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       28052,
+       28334
+      ],
+      [
+       38375,
+       38666
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       43308,
+       43582
+      ],
+      [
+       43212,
+       43307
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "BIOAMBERINC_04_10_2013-EX-10.34-DEVELOPMENT AGREEMENT (1)",
+   "mode": "prefilter",
+   "chars": 38733,
+   "sections_sent": 29,
+   "sections_total": 59,
+   "input_tokens": 9604,
+   "output_tokens": 1200,
+   "cost_usd": 0.0015604,
+   "latency_s": 4.192,
+   "wall_s": 0.018647040997166187,
+   "quotes": 9,
+   "quotes_exact": 8,
+   "quotes_repaired": 1,
+   "quotes_unverified": 0,
+   "risks": [
+    "uncapped-liability-carveout",
+    "non-compete",
+    "exclusivity",
+    "ip-assignment",
+    "governing-law-allowed",
+    "anti-assignment",
+    "audit-rights"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       31327,
+       31511
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       27128,
+       27599
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       27517,
+       27599
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       33710,
+       33984
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       20678,
+       21094
+      ]
+     ],
+     "statuses": [
+      "repaired"
+     ],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       19584,
+       19732
+      ],
+      [
+       19733,
+       19957
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       31530,
+       31676
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       5402,
+       5659
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "BIOCEPTINC_08_19_2013-EX-10-COLLABORATION AGREEMENT",
+   "mode": "prefilter",
+   "chars": 79052,
+   "sections_sent": 46,
+   "sections_total": 117,
+   "input_tokens": 13963,
+   "output_tokens": 1496,
+   "cost_usd": 0.0021443,
+   "latency_s": 6.025399999999999,
+   "wall_s": 0.03476075001526624,
+   "quotes": 12,
+   "quotes_exact": 12,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "uncapped-liability-carveout",
+    "auto-renewal-notice",
+    "termination-for-convenience",
+    "exclusivity",
+    "ip-assignment",
+    "change-of-control",
+    "anti-assignment",
+    "audit-rights"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       73046,
+       73268
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       65313,
+       65506
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       66604,
+       66774
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       59618,
+       59807
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       59809,
+       60079
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       12224,
+       12399
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       46269,
+       46461
+      ],
+      [
+       49268,
+       49408
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       66775,
+       66987
+      ],
+      [
+       75138,
+       75492
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       74849,
+       75112
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       19687,
+       19716
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "BIOFRONTERAAG_04_29_2019-EX-4.17-SUPPLY AGREEMENT",
+   "mode": "prefilter",
+   "chars": 63723,
+   "sections_sent": 31,
+   "sections_total": 50,
+   "input_tokens": 17360,
+   "output_tokens": 950,
+   "cost_usd": 0.002211,
+   "latency_s": 4.0055,
+   "wall_s": 4.057784875010839,
+   "quotes": 5,
+   "quotes_exact": 5,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "exclusivity",
+    "anti-assignment",
+    "audit-rights"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       57285,
+       57455
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       28462,
+       28679
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       7351,
+       7734
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       56404,
+       56576
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       26498,
+       26948
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "BLACKSTONEGSOLONG-SHORTCREDITINCOMEFUND_05_11_2020-EX-99.(K)(1)-SERVICE AGREEMENT",
+   "mode": "prefilter",
+   "chars": 52334,
+   "sections_sent": 26,
+   "sections_total": 86,
+   "input_tokens": 7457,
+   "output_tokens": 1371,
+   "cost_usd": 0.0014312,
+   "latency_s": 4.7482,
+   "wall_s": 4.799970375024714,
+   "quotes": 11,
+   "quotes_exact": 11,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "uncapped-liability-carveout",
+    "termination-for-convenience",
+    "change-of-control",
+    "anti-assignment"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       24399,
+       24565
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       1107,
+       1460
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       1107,
+       1460
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       12978,
+       13277
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       12924,
+       12995
+      ],
+      [
+       8990,
+       9288
+      ],
+      [
+       9289,
+       9475
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       8130,
+       8417
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       11995,
+       12118
+      ],
+      [
+       12576,
+       12687
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       24819,
+       25058
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "BUFFALOWILDWINGSINC_06_05_1998-EX-10.3-FRANCHISE AGREEMENT",
+   "mode": "prefilter",
+   "chars": 154495,
+   "sections_sent": 66,
+   "sections_total": 258,
+   "input_tokens": 17144,
+   "output_tokens": 1957,
+   "cost_usd": 0.0026929,
+   "latency_s": 7.1075,
+   "wall_s": 7.209104874986224,
+   "quotes": 16,
+   "quotes_exact": 16,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "liability-cap-required",
+    "uncapped-liability-carveout",
+    "non-compete",
+    "exclusivity",
+    "ip-assignment",
+    "change-of-control",
+    "anti-assignment",
+    "audit-rights"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       116238,
+       116540
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       11027,
+       11179
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       14482,
+       14663
+      ],
+      [
+       12339,
+       12486
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       111172,
+       111569
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       82124,
+       82826
+      ],
+      [
+       133054,
+       133189
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       8828,
+       8929
+      ],
+      [
+       8705,
+       8826
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       24707,
+       24811
+      ],
+      [
+       52775,
+       52984
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       103241,
+       103559
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       99620,
+       99715
+      ],
+      [
+       100166,
+       100298
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       54568,
+       54823
+      ],
+      [
+       55154,
+       55408
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "BellringBrandsInc_20190920_S-1_EX-10.12_11817081_EX-10.12_Manufacturing Agreement3",
+   "mode": "full",
+   "chars": 8024,
+   "sections_sent": 19,
+   "sections_total": 19,
+   "input_tokens": 4547,
+   "output_tokens": 352,
+   "cost_usd": 0.0006307000000000001,
+   "latency_s": 1.6358,
+   "wall_s": 1.6481061670056079,
+   "quotes": 0,
+   "quotes_exact": 0,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "liability-cap-required"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "CARDAX,INC_08_19_2014-EX-10.1-COLLABORATION AGREEMENT",
+   "mode": "prefilter",
+   "chars": 56539,
+   "sections_sent": 24,
+   "sections_total": 51,
+   "input_tokens": 14595,
+   "output_tokens": 1410,
+   "cost_usd": 0.0021645,
+   "latency_s": 4.9422,
+   "wall_s": 4.993683458014857,
+   "quotes": 9,
+   "quotes_exact": 9,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "uncapped-liability-carveout",
+    "ip-assignment",
+    "anti-assignment",
+    "audit-rights"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       46548,
+       46654
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       40220,
+       40372
+      ],
+      [
+       40513,
+       40855
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       40373,
+       40855
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       16074,
+       16420
+      ],
+      [
+       18618,
+       18911
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       48168,
+       48491
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       23635,
+       23953
+      ],
+      [
+       24736,
+       24857
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "CHEETAHMOBILEINC_04_22_2014-EX-10.43-Cooperation Agreement",
+   "mode": "prefilter",
+   "chars": 39177,
+   "sections_sent": 40,
+   "sections_total": 99,
+   "input_tokens": 7004,
+   "output_tokens": 980,
+   "cost_usd": 0.0011904,
+   "latency_s": 3.6319,
+   "wall_s": 3.6818973339977674,
+   "quotes": 7,
+   "quotes_exact": 7,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "termination-for-convenience",
+    "exclusivity",
+    "ip-assignment"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       21924,
+       22049
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       12711,
+       13187
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       26466,
+       26754
+      ],
+      [
+       13968,
+       14094
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       8408,
+       8647
+      ],
+      [
+       30073,
+       30149
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       17882,
+       18113
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "CORIOINC_07_20_2000-EX-10.5-LICENSE AND HOSTING AGREEMENT",
+   "mode": "prefilter",
+   "chars": 62324,
+   "sections_sent": 38,
+   "sections_total": 106,
+   "input_tokens": 11774,
+   "output_tokens": 2055,
+   "cost_usd": 0.0022049,
+   "latency_s": 6.7998,
+   "wall_s": 0.035388165997574106,
+   "quotes": 13,
+   "quotes_exact": 13,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "uncapped-liability-carveout",
+    "ip-assignment",
+    "change-of-control",
+    "anti-assignment",
+    "audit-rights"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       48414,
+       48652
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       35657,
+       36014
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       35754,
+       36014
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       33580,
+       34023
+      ],
+      [
+       34024,
+       34467
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       33580,
+       34023
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       44322,
+       44406
+      ],
+      [
+       43963,
+       44209
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       47269,
+       47708
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       47077,
+       47268
+      ],
+      [
+       47868,
+       47948
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       19226,
+       19380
+      ],
+      [
+       19530,
+       19738
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "CytodynInc_20200109_10-Q_EX-10.5_11941634_EX-10.5_License Agreement",
+   "mode": "prefilter",
+   "chars": 159488,
+   "sections_sent": 56,
+   "sections_total": 194,
+   "input_tokens": 22069,
+   "output_tokens": 2506,
+   "cost_usd": 0.0034599,
+   "latency_s": 9.231399999999999,
+   "wall_s": 9.330811041989364,
+   "quotes": 16,
+   "quotes_exact": 16,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "uncapped-liability-carveout",
+    "termination-for-convenience",
+    "non-compete",
+    "exclusivity",
+    "ip-assignment",
+    "change-of-control",
+    "anti-assignment",
+    "audit-rights"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       149260,
+       149575
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       114883,
+       115274
+      ],
+      [
+       115974,
+       116170
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       147255,
+       147791
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       147144,
+       147414
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       43830,
+       44016
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       36982,
+       37303
+      ],
+      [
+       55255,
+       55457
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       38291,
+       38537
+      ],
+      [
+       38538,
+       38695
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       44017,
+       44449
+      ],
+      [
+       152835,
+       153012
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       151993,
+       152342
+      ],
+      [
+       152343,
+       152424
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       83048,
+       83432
+      ],
+      [
+       84160,
+       84369
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "DRKOOPCOMINC_04_21_1999-EX-10.28-SPONSORSHIP AGREEMENT",
+   "mode": "prefilter",
+   "chars": 39177,
+   "sections_sent": 35,
+   "sections_total": 71,
+   "input_tokens": 9256,
+   "output_tokens": 1389,
+   "cost_usd": 0.0016201000000000002,
+   "latency_s": 5.336399999999999,
+   "wall_s": 5.376461583015043,
+   "quotes": 6,
+   "quotes_exact": 6,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "uncapped-liability-carveout",
+    "exclusivity",
+    "change-of-control",
+    "anti-assignment"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       33546,
+       33724
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       27255,
+       27661
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       27255,
+       27661
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       38880,
+       38954
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       32791,
+       33072
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       32791,
+       33072
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "ELFBEAUTY,INC_07_02_2020-EX-10.1-COOPERATION AGREEMENT",
+   "mode": "prefilter",
+   "chars": 45484,
+   "sections_sent": 29,
+   "sections_total": 70,
+   "input_tokens": 9376,
+   "output_tokens": 739,
+   "cost_usd": 0.0013071,
+   "latency_s": 2.7608,
+   "wall_s": 2.8036477089917753,
+   "quotes": 3,
+   "quotes_exact": 3,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "liability-cap-required",
+    "non-compete",
+    "anti-assignment"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       39394,
+       39704
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       23114,
+       23654
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       38077,
+       38172
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "ENTERTAINMENTGAMINGASIAINC_02_15_2005-EX-10.5-DISTRIBUTOR AGREEMENT",
+   "mode": "prefilter",
+   "chars": 44702,
+   "sections_sent": 37,
+   "sections_total": 86,
+   "input_tokens": 8354,
+   "output_tokens": 1646,
+   "cost_usd": 0.0016584,
+   "latency_s": 5.8923000000000005,
+   "wall_s": 0.02758374999393709,
+   "quotes": 15,
+   "quotes_exact": 15,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "uncapped-liability-carveout",
+    "non-compete",
+    "exclusivity",
+    "ip-assignment",
+    "governing-law-allowed",
+    "change-of-control",
+    "anti-assignment"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       42517,
+       42611
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       1504,
+       1665
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       1762,
+       1949
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       37976,
+       38257
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       29641,
+       30027
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       14055,
+       14243
+      ],
+      [
+       14244,
+       14415
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       6800,
+       6875
+      ],
+      [
+       6490,
+       6669
+      ],
+      [
+       13051,
+       13192
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       8502,
+       8695
+      ],
+      [
+       7668,
+       7824
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       2617,
+       2989
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       41726,
+       42069
+      ],
+      [
+       10947,
+       11112
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "EcoScienceSolutionsInc_20171117_8-K_EX-10.1_10956472_EX-10.1_Endorsement Agreement",
+   "mode": "prefilter",
+   "chars": 18104,
+   "sections_sent": 19,
+   "sections_total": 37,
+   "input_tokens": 5465,
+   "output_tokens": 1298,
+   "cost_usd": 0.0011955,
+   "latency_s": 4.589,
+   "wall_s": 4.616581667010905,
+   "quotes": 7,
+   "quotes_exact": 7,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "liability-cap-required",
+    "uncapped-liability-carveout",
+    "exclusivity",
+    "ip-assignment",
+    "governing-law-allowed",
+    "anti-assignment"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       14943,
+       15237
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       495,
+       727
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       495,
+       727
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       10798,
+       11861
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       5374,
+       5596
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       5946,
+       6221
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       12453,
+       12630
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "EdietsComInc_20001030_10QSB_EX-10.4_2606646_EX-10.4_Co-Branding Agreement",
+   "mode": "prefilter",
+   "chars": 64192,
+   "sections_sent": 43,
+   "sections_total": 118,
+   "input_tokens": 11796,
+   "output_tokens": 1633,
+   "cost_usd": 0.0019961,
+   "latency_s": 5.438899999999999,
+   "wall_s": 5.470912417018553,
+   "quotes": 10,
+   "quotes_exact": 10,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "uncapped-liability-carveout",
+    "exclusivity",
+    "change-of-control",
+    "anti-assignment"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       44612,
+       45013
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       24987,
+       25249
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       25137,
+       25249
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       41949,
+       42425
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       42426,
+       42621
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       11180,
+       11329
+      ],
+      [
+       13600,
+       13942
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       42826,
+       43083
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       42668,
+       42825
+      ],
+      [
+       43527,
+       43616
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "FEDERATEDGOVERNMENTINCOMESECURITIESINC_04_28_2020-EX-99.SERV AGREE-SERVICES AGREEMENT_AMENDMENT",
+   "mode": "full",
+   "chars": 3860,
+   "sections_sent": 8,
+   "sections_total": 8,
+   "input_tokens": 2868,
+   "output_tokens": 412,
+   "cost_usd": 0.0004928,
+   "latency_s": 1.7582,
+   "wall_s": 0.0030188329983502626,
+   "quotes": 1,
+   "quotes_exact": 1,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "liability-cap-required",
+    "governing-law-allowed"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       3156,
+       3270
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "GlobalTechnologiesGroupInc_20050928_10KSB_EX-10.9_4148808_EX-10.9_Content License Agreement",
+   "mode": "prefilter",
+   "chars": 39596,
+   "sections_sent": 21,
+   "sections_total": 73,
+   "input_tokens": 7642,
+   "output_tokens": 1064,
+   "cost_usd": 0.0012962,
+   "latency_s": 3.7967,
+   "wall_s": 3.8242205420101527,
+   "quotes": 7,
+   "quotes_exact": 7,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "auto-renewal-notice",
+    "ip-assignment",
+    "governing-law-allowed",
+    "anti-assignment"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       34574,
+       34688
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       2008,
+       2197
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       28813,
+       29079
+      ],
+      [
+       29080,
+       29198
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       15484,
+       15748
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       30432,
+       30607
+      ],
+      [
+       31136,
+       31280
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "HOLIDAYRVSUPERSTORESINC_04_15_2002-EX-10.13-ENDORSEMENT AGREEMENT",
+   "mode": "prefilter",
+   "chars": 14157,
+   "sections_sent": 18,
+   "sections_total": 30,
+   "input_tokens": 4314,
+   "output_tokens": 616,
+   "cost_usd": 0.0007394000000000001,
+   "latency_s": 2.3384,
+   "wall_s": 2.3481795419938862,
+   "quotes": 3,
+   "quotes_exact": 3,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "liability-cap-required",
+    "termination-for-convenience",
+    "anti-assignment"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       10347,
+       10528
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       5116,
+       5490
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       10557,
+       10708
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "HertzGroupRealtyTrustInc_20190920_S-11A_EX-10.8_11816941_EX-10.8_Trademark License Agreement",
+   "mode": "prefilter",
+   "chars": 14313,
+   "sections_sent": 10,
+   "sections_total": 14,
+   "input_tokens": 6845,
+   "output_tokens": 1302,
+   "cost_usd": 0.0013354999999999999,
+   "latency_s": 4.5167,
+   "wall_s": 0.01096920800046064,
+   "quotes": 8,
+   "quotes_exact": 8,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "termination-for-convenience",
+    "exclusivity",
+    "ip-assignment",
+    "change-of-control",
+    "anti-assignment"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       10467,
+       10693
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       5966,
+       6073
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       7710,
+       8148
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       5155,
+       5349
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       2550,
+       2771
+      ],
+      [
+       3313,
+       3443
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       6078,
+       6352
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       8529,
+       8715
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "InvendaCorp_20000828_S-1A_EX-10.2_2588206_EX-10.2_Co-Branding Agreement",
+   "mode": "prefilter",
+   "chars": 114759,
+   "sections_sent": 56,
+   "sections_total": 245,
+   "input_tokens": 10387,
+   "output_tokens": 1288,
+   "cost_usd": 0.0016827,
+   "latency_s": 4.9173,
+   "wall_s": 0.05126262499834411,
+   "quotes": 10,
+   "quotes_exact": 10,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "uncapped-liability-carveout",
+    "exclusivity",
+    "change-of-control",
+    "anti-assignment",
+    "audit-rights"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       73341,
+       73567
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       70213,
+       70506
+      ],
+      [
+       70515,
+       70627
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       70025,
+       70117
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       42430,
+       42704
+      ],
+      [
+       27678,
+       27857
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       51005,
+       51321
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       73586,
+       73932
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       75214,
+       75369
+      ],
+      [
+       74962,
+       75213
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "JOINTCORP_09_19_2014-EX-10.15-FRANCHISE AGREEMENT",
+   "mode": "prefilter",
+   "chars": 167259,
+   "sections_sent": 57,
+   "sections_total": 124,
+   "input_tokens": 30286,
+   "output_tokens": 1571,
+   "cost_usd": 0.0038141,
+   "latency_s": 5.9165,
+   "wall_s": 6.004607375012711,
+   "quotes": 14,
+   "quotes_exact": 14,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "uncapped-liability-carveout",
+    "non-compete",
+    "exclusivity",
+    "governing-law-allowed",
+    "anti-assignment",
+    "audit-rights"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       141869,
+       142030
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       18714,
+       18828
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       19555,
+       19642
+      ],
+      [
+       18882,
+       19118
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       141085,
+       141212
+      ],
+      [
+       140589,
+       140851
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       140337,
+       140583
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       66296,
+       66595
+      ],
+      [
+       65670,
+       66169
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       73833,
+       73939
+      ],
+      [
+       73615,
+       73731
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       107161,
+       107388
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       102353,
+       102634
+      ],
+      [
+       101396,
+       101515
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "LIGHTBRIDGECORP_11_23_2015-EX-10.26-STRATEGIC ALLIANCE AGREEMENT",
+   "mode": "prefilter",
+   "chars": 19386,
+   "sections_sent": 20,
+   "sections_total": 40,
+   "input_tokens": 4946,
+   "output_tokens": 549,
+   "cost_usd": 0.0007691,
+   "latency_s": 2.3411999999999997,
+   "wall_s": 0.010426416993141174,
+   "quotes": 3,
+   "quotes_exact": 3,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "liability-cap-required",
+    "termination-for-convenience",
+    "governing-law-allowed",
+    "anti-assignment"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       16509,
+       16611
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       13132,
+       13395
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       16992,
+       17080
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "LIMEENERGYCO_09_09_1999-EX-10-DISTRIBUTOR AGREEMENT",
+   "mode": "prefilter",
+   "chars": 54290,
+   "sections_sent": 36,
+   "sections_total": 74,
+   "input_tokens": 10526,
+   "output_tokens": 1160,
+   "cost_usd": 0.0016326000000000001,
+   "latency_s": 5.612,
+   "wall_s": 5.657524582988117,
+   "quotes": 8,
+   "quotes_exact": 8,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "uncapped-liability-carveout",
+    "auto-renewal-notice",
+    "non-compete",
+    "exclusivity",
+    "governing-law-allowed",
+    "anti-assignment"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       52061,
+       52151
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       5543,
+       5881
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       14978,
+       15273
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       41177,
+       41601
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       45015,
+       45202
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       2112,
+       2416
+      ],
+      [
+       52212,
+       52525
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       45980,
+       46265
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "LiquidmetalTechnologiesInc_20200205_8-K_EX-10.1_11968198_EX-10.1_Development Agreement",
+   "mode": "prefilter",
+   "chars": 83972,
+   "sections_sent": 39,
+   "sections_total": 68,
+   "input_tokens": 22324,
+   "output_tokens": 1795,
+   "cost_usd": 0.0031299,
+   "latency_s": 5.8151,
+   "wall_s": 0.04761737497756258,
+   "quotes": 8,
+   "quotes_exact": 8,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "termination-for-convenience",
+    "ip-assignment",
+    "governing-law-allowed",
+    "anti-assignment",
+    "audit-rights"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       75007,
+       75624
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       2957,
+       3294
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       2957,
+       3294
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       36576,
+       36821
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       69992,
+       70345
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       52027,
+       52335
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       71332,
+       71796
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       65024,
+       65647
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "MACY_S,INC_05_11_2020-EX-99.4-JOINT FILING AGREEMENT",
+   "mode": "full",
+   "chars": 1397,
+   "sections_sent": 1,
+   "sections_total": 1,
+   "input_tokens": 2111,
+   "output_tokens": 352,
+   "cost_usd": 0.00038710000000000003,
+   "latency_s": 1.4932,
+   "wall_s": 1.5000983749923762,
+   "quotes": 0,
+   "quotes_exact": 0,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "liability-cap-required"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "MEDALISTDIVERSIFIEDREIT,INC_05_18_2020-EX-10.1-CONSULTING AGREEMENT",
+   "mode": "prefilter",
+   "chars": 24315,
+   "sections_sent": 17,
+   "sections_total": 20,
+   "input_tokens": 9244,
+   "output_tokens": 1213,
+   "cost_usd": 0.0015309000000000002,
+   "latency_s": 4.2055,
+   "wall_s": 0.01401595800416544,
+   "quotes": 8,
+   "quotes_exact": 8,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "liability-cap-required",
+    "auto-renewal-notice",
+    "termination-for-convenience",
+    "non-compete",
+    "ip-assignment",
+    "governing-law-allowed",
+    "change-of-control",
+    "anti-assignment"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       18414,
+       18597
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       23261,
+       23489
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       12867,
+       13086
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       10050,
+       10419
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       7053,
+       7335
+      ],
+      [
+       7336,
+       7564
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       14470,
+       14820
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       17126,
+       17232
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "NakedBrandGroupInc_20150731_POS AM (on S-1)_EX-10.75_9196027_EX-10.75_Endorsement Agreement",
+   "mode": "prefilter",
+   "chars": 48410,
+   "sections_sent": 30,
+   "sections_total": 88,
+   "input_tokens": 8779,
+   "output_tokens": 1620,
+   "cost_usd": 0.0016879,
+   "latency_s": 5.8828000000000005,
+   "wall_s": 5.927523499995004,
+   "quotes": 12,
+   "quotes_exact": 12,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "liability-cap-required",
+    "uncapped-liability-carveout",
+    "non-compete",
+    "exclusivity",
+    "ip-assignment",
+    "change-of-control",
+    "anti-assignment"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       41450,
+       41666
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       2181,
+       2401
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       35367,
+       35982
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       26624,
+       26948
+      ],
+      [
+       8490,
+       8704
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       8174,
+       8489
+      ],
+      [
+       3429,
+       3790
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       31908,
+       32003
+      ],
+      [
+       31753,
+       31907
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       20694,
+       20836
+      ],
+      [
+       20837,
+       21159
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       38341,
+       38518
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "OAKTREECAPITALGROUP,LLC_03_02_2020-EX-10.8-Services Agreement",
+   "mode": "prefilter",
+   "chars": 20133,
+   "sections_sent": 24,
+   "sections_total": 48,
+   "input_tokens": 5745,
+   "output_tokens": 575,
+   "cost_usd": 0.000862,
+   "latency_s": 2.3594,
+   "wall_s": 0.010596250009257346,
+   "quotes": 3,
+   "quotes_exact": 3,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "liability-cap-required",
+    "termination-for-convenience",
+    "governing-law-allowed",
+    "anti-assignment"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       17375,
+       17435
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       15798,
+       15977
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       18284,
+       18452
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "PROLONGINTERNATIONALCORP_03_23_1998-EX-10.16-SPONSORSHIP AGREEMENT",
+   "mode": "prefilter",
+   "chars": 14969,
+   "sections_sent": 19,
+   "sections_total": 31,
+   "input_tokens": 4896,
+   "output_tokens": 552,
+   "cost_usd": 0.0007656,
+   "latency_s": 2.2302,
+   "wall_s": 0.007866833009757102,
+   "quotes": 3,
+   "quotes_exact": 3,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "liability-cap-required",
+    "exclusivity",
+    "governing-law-allowed",
+    "anti-assignment"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       12803,
+       12974
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       7392,
+       7609
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       12195,
+       12321
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "PalmerSquareCapitalBdcInc_20200116_10-12GA_EX-10.6_11949289_EX-10.6_Trademark License Agreement",
+   "mode": "prefilter",
+   "chars": 14764,
+   "sections_sent": 11,
+   "sections_total": 14,
+   "input_tokens": 6349,
+   "output_tokens": 696,
+   "cost_usd": 0.0009829,
+   "latency_s": 2.6492,
+   "wall_s": 2.6693374999740627,
+   "quotes": 3,
+   "quotes_exact": 3,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "liability-cap-required",
+    "termination-for-convenience",
+    "anti-assignment"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       11593,
+       11698
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       8147,
+       8445
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       9968,
+       10289
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "PcquoteComInc_19990721_S-1A_EX-10.11_6377149_EX-10.11_Co-Branding Agreement3",
+   "mode": "full",
+   "chars": 2558,
+   "sections_sent": 8,
+   "sections_total": 8,
+   "input_tokens": 2511,
+   "output_tokens": 352,
+   "cost_usd": 0.00042710000000000003,
+   "latency_s": 1.5400999999999998,
+   "wall_s": 1.547310333000496,
+   "quotes": 0,
+   "quotes_exact": 0,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "liability-cap-required"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "PelicanDeliversInc_20200211_S-1_EX-10.3_11975895_EX-10.3_Development Agreement2",
+   "mode": "prefilter",
+   "chars": 32093,
+   "sections_sent": 22,
+   "sections_total": 30,
+   "input_tokens": 10189,
+   "output_tokens": 1112,
+   "cost_usd": 0.0015749000000000002,
+   "latency_s": 4.5965,
+   "wall_s": 4.622956709004939,
+   "quotes": 7,
+   "quotes_exact": 7,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "liability-cap-required",
+    "uncapped-liability-carveout",
+    "termination-for-convenience",
+    "ip-assignment",
+    "governing-law-allowed",
+    "anti-assignment"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       26251,
+       26373
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       23561,
+       23713
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       20365,
+       20791
+      ],
+      [
+       21128,
+       21563
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       11541,
+       11766
+      ],
+      [
+       12118,
+       12346
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       29037,
+       29224
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "PfHospitalityGroupInc_20150923_10-12G_EX-10.1_9266710_EX-10.1_Franchise Agreement1",
+   "mode": "prefilter",
+   "chars": 152649,
+   "sections_sent": 52,
+   "sections_total": 122,
+   "input_tokens": 27254,
+   "output_tokens": 2303,
+   "cost_usd": 0.0038769,
+   "latency_s": 8.0297,
+   "wall_s": 8.12901087498176,
+   "quotes": 18,
+   "quotes_exact": 18,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "uncapped-liability-carveout",
+    "non-compete",
+    "exclusivity",
+    "ip-assignment",
+    "governing-law-allowed",
+    "change-of-control",
+    "anti-assignment",
+    "audit-rights"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       144731,
+       144961
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       12768,
+       12921
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       13052,
+       13220
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       146482,
+       146682
+      ],
+      [
+       146717,
+       147131
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       138666,
+       139167
+      ],
+      [
+       139596,
+       139751
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       135083,
+       135678
+      ],
+      [
+       134283,
+       134691
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       44250,
+       44384
+      ],
+      [
+       44441,
+       45042
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       52690,
+       52843
+      ],
+      [
+       94215,
+       94544
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       107231,
+       107497
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       106382,
+       106514
+      ],
+      [
+       105048,
+       105226
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       77894,
+       78140
+      ],
+      [
+       55442,
+       55720
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "PfHospitalityGroupInc_20150923_10-12G_EX-10.1_9266710_EX-10.1_Franchise Agreement3",
+   "mode": "full",
+   "chars": 6772,
+   "sections_sent": 6,
+   "sections_total": 6,
+   "input_tokens": 3844,
+   "output_tokens": 788,
+   "cost_usd": 0.0007784000000000001,
+   "latency_s": 2.9128000000000003,
+   "wall_s": 2.927777957986109,
+   "quotes": 2,
+   "quotes_exact": 2,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "liability-cap-required",
+    "non-compete"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       3500,
+       4046
+      ],
+      [
+       2504,
+       3217
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "PhasebioPharmaceuticalsInc_20200330_10-K_EX-10.21_12086810_EX-10.21_Development Agreement",
+   "mode": "prefilter",
+   "chars": 291873,
+   "sections_sent": 79,
+   "sections_total": 462,
+   "input_tokens": 23293,
+   "output_tokens": 2295,
+   "cost_usd": 0.0034768000000000004,
+   "latency_s": 8.3638,
+   "wall_s": 8.506017624982633,
+   "quotes": 14,
+   "quotes_exact": 14,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "uncapped-liability-carveout",
+    "termination-for-convenience",
+    "exclusivity",
+    "ip-assignment",
+    "change-of-control",
+    "anti-assignment",
+    "audit-rights"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       276016,
+       276377
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       243445,
+       243669
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       283878,
+       284410
+      ],
+      [
+       281348,
+       281481
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       285085,
+       285232
+      ],
+      [
+       216751,
+       217004
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       109480,
+       109846
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       200484,
+       200680
+      ],
+      [
+       201251,
+       201593
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       150948,
+       151255
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       271393,
+       271654
+      ],
+      [
+       273113,
+       273467
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       85178,
+       85461
+      ],
+      [
+       85528,
+       85761
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "PlayboyEnterprisesInc_20090220_10-QA_EX-10.2_4091580_EX-10.2_Content License Agreement_ Marketing Agreement_ Sales-Purchase Agreement1",
+   "mode": "prefilter",
+   "chars": 117118,
+   "sections_sent": 43,
+   "sections_total": 105,
+   "input_tokens": 23317,
+   "output_tokens": 1970,
+   "cost_usd": 0.0033167000000000006,
+   "latency_s": 6.8397,
+   "wall_s": 6.919283540977631,
+   "quotes": 11,
+   "quotes_exact": 11,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "uncapped-liability-carveout",
+    "auto-renewal-notice",
+    "exclusivity",
+    "ip-assignment",
+    "governing-law-allowed",
+    "anti-assignment",
+    "audit-rights"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       101547,
+       101699
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       83507,
+       83802
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       94041,
+       94527
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       94041,
+       94527
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       38515,
+       39004
+      ],
+      [
+       38356,
+       38514
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       69153,
+       69328
+      ],
+      [
+       13576,
+       13812
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       95903,
+       96160
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       67644,
+       67983
+      ],
+      [
+       55616,
+       55727
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "Principal Life Insurance Company - Broker Dealer Marketing and Servicing Agreement",
+   "mode": "prefilter",
+   "chars": 29599,
+   "sections_sent": 18,
+   "sections_total": 25,
+   "input_tokens": 9469,
+   "output_tokens": 546,
+   "cost_usd": 0.0012199,
+   "latency_s": 2.5681,
+   "wall_s": 2.601753249997273,
+   "quotes": 3,
+   "quotes_exact": 3,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "liability-cap-required",
+    "termination-for-convenience",
+    "governing-law-allowed",
+    "anti-assignment"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       25285,
+       25384
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       24389,
+       24473
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       25119,
+       25275
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "QIWI_06_16_2017-EX-99.(D)(2)-COOPERATION AGREEMENT",
+   "mode": "prefilter",
+   "chars": 26192,
+   "sections_sent": 28,
+   "sections_total": 61,
+   "input_tokens": 6433,
+   "output_tokens": 705,
+   "cost_usd": 0.0009958,
+   "latency_s": 2.7585,
+   "wall_s": 2.790094500000123,
+   "quotes": 3,
+   "quotes_exact": 3,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "liability-cap-required",
+    "exclusivity",
+    "governing-law-allowed",
+    "anti-assignment"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       20880,
+       21199
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       11449,
+       11647
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       17801,
+       18095
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "REGANHOLDINGCORP_03_31_2008-EX-10-LICENSE AND HOSTING AGREEMENT",
+   "mode": "prefilter",
+   "chars": 55889,
+   "sections_sent": 39,
+   "sections_total": 93,
+   "input_tokens": 9932,
+   "output_tokens": 947,
+   "cost_usd": 0.0014667,
+   "latency_s": 3.4658,
+   "wall_s": 3.523482792021241,
+   "quotes": 5,
+   "quotes_exact": 5,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "uncapped-liability-carveout",
+    "ip-assignment",
+    "anti-assignment"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       53291,
+       53414
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       26764,
+       26974
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       26976,
+       27340
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       5870,
+       6058
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       46314,
+       46535
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "REWALKROBOTICSLTD_07_10_2014-EX-10.2-STRATEGIC ALLIANCE AGREEMENT",
+   "mode": "prefilter",
+   "chars": 14979,
+   "sections_sent": 18,
+   "sections_total": 31,
+   "input_tokens": 4977,
+   "output_tokens": 817,
+   "cost_usd": 0.0009062,
+   "latency_s": 3.3203,
+   "wall_s": 0.012201624980662018,
+   "quotes": 5,
+   "quotes_exact": 5,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "liability-cap-required",
+    "auto-renewal-notice",
+    "termination-for-convenience",
+    "exclusivity",
+    "governing-law-allowed",
+    "anti-assignment"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       13495,
+       13603
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       6241,
+       6499
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       6051,
+       6240
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       3662,
+       3897
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       11597,
+       11751
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "RISEEDUCATIONCAYMANLTD_04_17_2020-EX-4.23-SERVICE AGREEMENT",
+   "mode": "prefilter",
+   "chars": 16372,
+   "sections_sent": 13,
+   "sections_total": 32,
+   "input_tokens": 4151,
+   "output_tokens": 874,
+   "cost_usd": 0.0008521,
+   "latency_s": 3.3984,
+   "wall_s": 3.4159177920082584,
+   "quotes": 4,
+   "quotes_exact": 4,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "liability-cap-required",
+    "auto-renewal-notice",
+    "ip-assignment",
+    "anti-assignment"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       12785,
+       12825
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       13414,
+       13581
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       6678,
+       7091
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       5201,
+       5391
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "SEPARATEACCOUNTIIOFAGL_05_02_2011-EX-99.(J)(4)-UNCONDITIONAL CAPITAL MAINTENANCE AGREEMENT",
+   "mode": "prefilter",
+   "chars": 20121,
+   "sections_sent": 20,
+   "sections_total": 32,
+   "input_tokens": 6742,
+   "output_tokens": 692,
+   "cost_usd": 0.0010202,
+   "latency_s": 2.6096,
+   "wall_s": 2.6371940829849336,
+   "quotes": 3,
+   "quotes_exact": 3,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "liability-cap-required",
+    "termination-for-convenience",
+    "change-of-control"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       17936,
+       18101
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       12153,
+       12603
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       12405,
+       12603
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "SMITHELECTRICVEHICLESCORP_04_04_2012-EX-10.26-FLEET MAINTENANCE AGREEMENT",
+   "mode": "prefilter",
+   "chars": 85963,
+   "sections_sent": 31,
+   "sections_total": 80,
+   "input_tokens": 15817,
+   "output_tokens": 1182,
+   "cost_usd": 0.0021727,
+   "latency_s": 4.6071,
+   "wall_s": 4.672926583007211,
+   "quotes": 8,
+   "quotes_exact": 7,
+   "quotes_repaired": 1,
+   "quotes_unverified": 0,
+   "risks": [
+    "uncapped-liability-carveout",
+    "auto-renewal-notice",
+    "termination-for-convenience",
+    "governing-law-allowed",
+    "anti-assignment",
+    "audit-rights"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       70690,
+       70881
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       13689,
+       13833
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       50638,
+       50798
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       49658,
+       50070
+      ],
+      [
+       49527,
+       49648
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       50080,
+       50290
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       69389,
+       69563
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       15687,
+       15896
+      ]
+     ],
+     "statuses": [
+      "repaired"
+     ],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "SOLUTIONSVENDINGINTERNATIONAL,INC_03_31_2020-EX1A-1 UNDR AGMT-SERVICES AGREEMENT",
+   "mode": "full",
+   "chars": 7124,
+   "sections_sent": 6,
+   "sections_total": 6,
+   "input_tokens": 3882,
+   "output_tokens": 460,
+   "cost_usd": 0.0006182000000000001,
+   "latency_s": 1.946,
+   "wall_s": 1.9561993749812245,
+   "quotes": 1,
+   "quotes_exact": 1,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "liability-cap-required"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       4887,
+       5133
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "SPORTHALEYINC_09_29_1997-EX-10.2-10-ENDORSEMENT AGREEMENT",
+   "mode": "full",
+   "chars": 11930,
+   "sections_sent": 20,
+   "sections_total": 20,
+   "input_tokens": 4870,
+   "output_tokens": 975,
+   "cost_usd": 0.0009745,
+   "latency_s": 3.4116,
+   "wall_s": 3.421835875022225,
+   "quotes": 6,
+   "quotes_exact": 6,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "liability-cap-required",
+    "exclusivity",
+    "governing-law-allowed",
+    "change-of-control",
+    "anti-assignment"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       9909,
+       10094
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       1126,
+       1485
+      ],
+      [
+       1505,
+       1932
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       9192,
+       9578
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       9102,
+       9191
+      ],
+      [
+       9192,
+       9578
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "SYKESHEALTHPLANSERVICESINC_04_24_1998-EX-10.14-OUTSOURCING AGREEMENT",
+   "mode": "prefilter",
+   "chars": 12852,
+   "sections_sent": 17,
+   "sections_total": 25,
+   "input_tokens": 4832,
+   "output_tokens": 959,
+   "cost_usd": 0.0009627,
+   "latency_s": 3.6809000000000003,
+   "wall_s": 0.007694667001487687,
+   "quotes": 8,
+   "quotes_exact": 8,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "liability-cap-required",
+    "exclusivity",
+    "governing-law-allowed",
+    "anti-assignment",
+    "audit-rights"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       12027,
+       12162
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       2132,
+       2380
+      ],
+      [
+       2381,
+       2573
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       2381,
+       2573
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       1158,
+       1351
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       8789,
+       8955
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       6856,
+       6961
+      ],
+      [
+       6962,
+       7078
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "TALLGRASSENERGY,LP_02_20_2020-EX-99.26-JOINT FILING AGREEMENT",
+   "mode": "full",
+   "chars": 3971,
+   "sections_sent": 10,
+   "sections_total": 10,
+   "input_tokens": 3299,
+   "output_tokens": 352,
+   "cost_usd": 0.0005059000000000001,
+   "latency_s": 1.5469000000000002,
+   "wall_s": 1.5555952499853447,
+   "quotes": 0,
+   "quotes_exact": 0,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "liability-cap-required"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "TELEGLOBEINTERNATIONALHOLDINGSLTD_03_29_2004-EX-10.10-CONSTRUCTION AND MAINTENANCE AGREEMENT",
+   "mode": "prefilter",
+   "chars": 94266,
+   "sections_sent": 37,
+   "sections_total": 93,
+   "input_tokens": 18654,
+   "output_tokens": 1160,
+   "cost_usd": 0.0024454000000000004,
+   "latency_s": 4.106199999999999,
+   "wall_s": 4.180868666997412,
+   "quotes": 7,
+   "quotes_exact": 7,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "termination-for-convenience",
+    "anti-assignment",
+    "audit-rights"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       68948,
+       69473
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       69254,
+       69473
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       76429,
+       76802
+      ]
+     ],
+     "statuses": [
+      "exact"
+     ],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       77167,
+       77419
+      ],
+      [
+       77422,
+       77677
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": true,
+     "found": true,
+     "spans": [
+      [
+       44097,
+       44241
+      ],
+      [
+       49844,
+       50056
+      ]
+     ],
+     "statuses": [
+      "exact",
+      "exact"
+     ],
+     "dropped": []
+    }
+   }
+  },
+  {
+   "id": "UNITEDNATIONALBANCORP_03_03_1999-EX-99-Outsourcing Agreement with the BISYS Group, Inc.",
+   "mode": "full",
+   "chars": 1952,
+   "sections_sent": 5,
+   "sections_total": 5,
+   "input_tokens": 2204,
+   "output_tokens": 352,
+   "cost_usd": 0.0003964,
+   "latency_s": 2.3002,
+   "wall_s": 2.3053226250049192,
+   "quotes": 0,
+   "quotes_exact": 0,
+   "quotes_repaired": 0,
+   "quotes_unverified": 0,
+   "risks": [
+    "liability-cap-required"
+   ],
+   "categories": {
+    "governing_law": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "renewal_term": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "notice_to_terminate_renewal": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "termination_for_convenience": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "cap_on_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "uncapped_liability": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "non_compete": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "exclusivity": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "ip_ownership_assignment": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "change_of_control": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "anti_assignment": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    },
+    "audit_rights": {
+     "model_found": false,
+     "found": false,
+     "spans": [],
+     "statuses": [],
+     "dropped": []
+    }
+   }
+  }
+ ]
+}
