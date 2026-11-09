@@ -7,95 +7,97 @@
 <meta name="description" content="Upload a contract, get its key clauses with verified quotes, playbook risk flags and cited answers.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
 <link rel="stylesheet" href="/static/app.css">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect x='3' y='1.5' width='10' height='13' fill='none' stroke='%23c8431a' stroke-width='1.4'/%3E%3Cpath d='M5.5 5h5M5.5 8h5M5.5 11h3' stroke='%2317160f' stroke-width='1.2'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%231d3a6e'/%3E%3Cpath d='M4.5 3.5h5l2 2v7h-7z' fill='%23fff'/%3E%3Cpath d='M6 8h4M6 10h4' stroke='%231d3a6e' stroke-width='1'/%3E%3C/svg%3E">
 </head>
 <body>
-<header class="topbar">
-  <div class="wrap bar">
-    <a class="brand" href="/">contract<em>review</em></a>
-    <div class="meta label" id="meta">loading…</div>
-    <button class="theme" id="theme" type="button" aria-label="Toggle dark mode">Theme</button>
-  </div>
+<a class="skip" href="#canvas">Skip to document</a>
+<header class="appbar">
+  <a class="brand" href="/" aria-label="Contract Review, home">
+    <svg class="brand-mark" viewBox="0 0 20 20" aria-hidden="true"><rect width="20" height="20" rx="4"/><path d="M6 4.5h6l2.5 2.5v8.5H6z" fill="#fff"/><path d="M8 10h5M8 12.5h5" stroke="currentColor" stroke-width="1.2"/></svg>
+    <span>Contract Review</span>
+  </a>
+  <span class="appbar-sep" aria-hidden="true"></span>
+  <span class="appbar-ctx" id="playbook"></span>
+  <div class="meta" id="meta" aria-live="polite">Loading…</div>
+  <button class="icon-btn" id="theme" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3.75a6.25 6.25 0 0 0 0 12.5z" fill="currentColor"/><circle cx="10" cy="10" r="6.25" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+  </button>
 </header>
 
-<main class="wrap layout">
-  <aside class="rail">
-    <section>
-      <div class="label">Upload</div>
+<div class="workbench">
+  <aside class="pane pane-docs" aria-label="Documents">
+    <div class="pane-head"><h2>Documents</h2><span class="pane-count" id="doc-count"></span></div>
+    <div class="upload">
       <label class="drop" id="drop">
-        <input type="file" id="file" accept=".pdf,.docx,.txt" hidden>
-        <span class="drop-main">Drop a contract</span>
-        <span class="label">PDF · DOCX · TXT</span>
+        <input type="file" id="file" accept=".pdf,.docx,.txt" class="sr-only">
+        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 13V4M6.5 7.5 10 4l3.5 3.5M4 13v3h12v-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span><span class="drop-main">Upload contract</span><span class="drop-sub">or drop a PDF, DOCX or TXT file</span></span>
       </label>
-      <p class="status small" id="upload-status" role="status"></p>
-    </section>
-    <section>
-      <div class="label">Documents</div>
-      <ol class="docs" id="docs"></ol>
-    </section>
+      <p class="status" id="upload-status" role="status"></p>
+    </div>
+    <ol class="docs" id="docs"></ol>
   </aside>
 
-  <section class="main" id="main">
-    <div class="empty" id="empty">
-      <h1 class="display">Every clause,<br><em>with its quote.</em></h1>
-      <p class="muted lede">Upload a commercial contract. The service finds 12 clause types that matter in a first review, quotes the exact text for each one, checks every quote against the document, flags risks against a YAML playbook and answers questions with citations.</p>
-      <ul class="facts">
-        <li><span class="label">Model</span><span class="mono">Claude Haiku 5.5</span></li>
-        <li><span class="label">Quotes</span><span>verified in code, never paraphrased</span></li>
-        <li><span class="label">Risk</span><span>deterministic rules, not model opinion</span></li>
-      </ul>
+  <main class="pane pane-doc" id="main">
+    <div class="doc-toolbar">
+      <div class="doc-id">
+        <h1 id="doc-title">No document open</h1>
+        <div class="doc-kicker" id="doc-kicker">Select a document or upload one</div>
+      </div>
+      <button class="btn primary" id="run" type="button" hidden>Run review</button>
+    </div>
+    <div class="canvas" id="canvas" tabindex="-1">
+      <article class="page" id="page">
+        <div class="empty" id="empty">
+          <h2>Review a contract clause by clause</h2>
+          <p>Upload a commercial contract. The service finds 12 clause types that matter in a first review, quotes the exact text for each one, checks every quote against the document, flags risks against the team playbook and answers questions with citations.</p>
+          <dl class="facts">
+            <div><dt>Model</dt><dd>Claude Haiku 5.5</dd></div>
+            <div><dt>Quotes</dt><dd>Verified against the document in code, never paraphrased</dd></div>
+            <div><dt>Risk flags</dt><dd>Deterministic playbook rules, not model opinion</dd></div>
+          </dl>
+        </div>
+        <div class="paper" id="paper" tabindex="0" aria-label="Contract text" hidden></div>
+      </article>
+    </div>
+    <div class="statusbar" id="doc-stats" aria-label="Document statistics"></div>
+  </main>
+
+  <aside class="pane pane-find" id="findings" aria-label="Findings" hidden>
+    <div class="tabs" role="tablist" aria-label="Findings">
+      <button role="tab" id="tab-clauses" aria-controls="panel-clauses" aria-selected="true" type="button">Clauses <span class="count" id="clause-count"></span></button>
+      <button role="tab" id="tab-risks" aria-controls="panel-risks" aria-selected="false" tabindex="-1" type="button">Risks <span class="count" id="risk-count"></span></button>
+      <button role="tab" id="tab-ask" aria-controls="panel-ask" aria-selected="false" tabindex="-1" type="button">Ask <span class="count" id="ask-count"></span></button>
     </div>
 
-    <div class="doc-view" id="doc-view" hidden>
-      <div class="doc-head">
-        <div>
-          <div class="label" id="doc-kicker">Document</div>
-          <h2 id="doc-title"></h2>
-          <div class="stats mono" id="doc-stats"></div>
+    <section class="panel" role="tabpanel" id="panel-clauses" aria-labelledby="tab-clauses">
+      <p class="panel-empty" id="clauses-empty">Run a review to extract clauses.</p>
+      <ol class="clauses" id="clauses"></ol>
+      <p class="footnote" id="verify-note"></p>
+    </section>
+
+    <section class="panel" role="tabpanel" id="panel-risks" aria-labelledby="tab-risks" hidden>
+      <p class="panel-empty" id="risks-empty">Run a review to check the playbook.</p>
+      <div class="sev-summary" id="sev-summary"></div>
+      <ol class="risks" id="risks"></ol>
+    </section>
+
+    <section class="panel" role="tabpanel" id="panel-ask" aria-labelledby="tab-ask" hidden>
+      <form class="ask" id="ask">
+        <label for="question" class="ask-label">Ask a question about this contract</label>
+        <div class="ask-row">
+          <input id="question" type="text" placeholder="Can either party terminate without cause?" autocomplete="off" maxlength="500">
+          <button class="btn primary" type="submit">Ask</button>
         </div>
-        <button class="pill primary" id="run" type="button">Run review</button>
-      </div>
-
-      <div class="cols">
-        <div class="left">
-          <section class="block" id="clauses-block" hidden>
-            <div class="block-head"><h3>Clauses</h3><span class="label" id="clause-count"></span></div>
-            <table class="clauses">
-              <thead><tr><th class="label">Category</th><th class="label">Found</th><th class="label">Quote</th></tr></thead>
-              <tbody id="clauses"></tbody>
-            </table>
-            <p class="footnote small muted" id="verify-note"></p>
-          </section>
-
-          <section class="block" id="risks-block" hidden>
-            <div class="block-head"><h3>Risk flags</h3><span class="label" id="risk-count"></span></div>
-            <ol class="risks" id="risks"></ol>
-          </section>
-
-          <section class="block">
-            <div class="block-head"><h3>Ask the contract</h3><span class="label">cited answers</span></div>
-            <form class="ask" id="ask">
-              <input id="question" type="text" placeholder="Can either party terminate without cause?" autocomplete="off" maxlength="500">
-              <button class="pill" type="submit">Ask</button>
-            </form>
-            <ol class="answers" id="answers"></ol>
-          </section>
-        </div>
-
-        <div class="right">
-          <div class="paper-head">
-            <span class="label">Contract text</span>
-            <span class="label" id="hl-legend"><i class="sw"></i> verified quote</span>
-          </div>
-          <div class="paper" id="paper" tabindex="0"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-</main>
-<footer class="wrap foot label">Not legal advice. Evaluated on CUAD v1 (The Atticus Project, CC BY 4.0).</footer>
+        <p class="ask-hint">Answers cite verified passages. An answer without a verified citation is marked unsupported.</p>
+      </form>
+      <ol class="answers" id="answers"></ol>
+    </section>
+  </aside>
+</div>
+<footer class="legal">Not legal advice. Evaluated on CUAD v1 (The Atticus Project, CC BY 4.0).</footer>
 <script src="/static/app.js"></script>
 </body>
 </html>

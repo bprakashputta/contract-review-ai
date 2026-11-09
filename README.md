@@ -8,7 +8,7 @@ A FastAPI service with a small web UI for legal and ops teams. It reads a PDF, D
 
 The rule throughout: **the model quotes, code checks.** Every quote is matched against the document before it is shown. A quote that can't be found is dropped. Risk flags come from deterministic rules applied to verified clauses only.
 
-![Review of a 101K-character outsourcing agreement from the CUAD test set: clause table on the left, the liability-cap quotes highlighted in the contract text on the right](docs/img/review.png)
+![Review of a 101K-character outsourcing agreement from the CUAD test set: document list on the left, the contract as a page in the centre with the liability-cap quotes highlighted, clause findings on the right](docs/img/review.png)
 
 - **12 CUAD clause categories**, one Claude Haiku 5.5 call per contract, JSON-schema structured output
 - **Quote verification in code:** normalized matching mapped back to exact character offsets, plus repair for page footers that split a sentence. Only verbatim document text is highlighted
